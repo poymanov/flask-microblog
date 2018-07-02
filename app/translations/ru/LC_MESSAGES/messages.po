@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-06-30 18:37+0300\n"
+"POT-Creation-Date: 2018-07-03 00:18+0300\n"
 "PO-Revision-Date: 2018-06-13 22:50+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -24,7 +24,7 @@ msgid "Please log in to access this page."
 msgstr "Требуется авторизация для доступа к этой странице"
 
 #: app/auth/forms.py:8 app/auth/forms.py:14 app/forms.py:8 app/forms.py:14
-#: app/forms.py:31 app/main/forms.py:10
+#: app/forms.py:31 app/main/forms.py:9
 msgid "Username"
 msgstr "Логин"
 
@@ -53,7 +53,7 @@ msgstr "Повтор пароля"
 msgid "Register"
 msgstr "Зарегистироваться"
 
-#: app/auth/forms.py:23 app/forms.py:23 app/forms.py:43 app/main/forms.py:23
+#: app/auth/forms.py:23 app/forms.py:23 app/forms.py:43 app/main/forms.py:22
 msgid "Please use a different username."
 msgstr "Имя уже занято. Используйте другое"
 
@@ -61,15 +61,16 @@ msgstr "Имя уже занято. Используйте другое"
 msgid "Please use a different email address."
 msgstr "Адрес уже занят. Используйте другой"
 
-#: app/forms.py:32 app/main/forms.py:11
+#: app/forms.py:32 app/main/forms.py:10
 msgid "About me"
 msgstr "О себе"
 
-#: app/forms.py:33 app/forms.py:48 app/main/forms.py:13 app/main/forms.py:27
+#: app/forms.py:33 app/forms.py:48 app/main/forms.py:12 app/main/forms.py:26
+#: app/main/forms.py:41
 msgid "Submit"
 msgstr "Отправить"
 
-#: app/forms.py:46 app/main/forms.py:26
+#: app/forms.py:46 app/main/forms.py:25
 msgid "Say something"
 msgstr "Напишите что-нибудь"
 
@@ -101,19 +102,23 @@ msgstr "Сбросить пароль"
 msgid "Your password has been reset."
 msgstr "Ваш пароль был сброшен"
 
-#: app/main/forms.py:30 app/main/routes.py:140
+#: app/main/forms.py:29 app/main/routes.py:140
 msgid "Search"
 msgstr "Поиск"
+
+#: app/main/forms.py:39
+msgid "Message"
+msgstr "Сообщение"
 
 #: app/main/routes.py:29
 msgid "Your post is now live!"
 msgstr "Сообщение опубликовано"
 
-#: app/main/routes.py:38 app/templates/base.html:27
+#: app/main/routes.py:38 app/templates/base.html:90
 msgid "Home"
 msgstr "Главная"
 
-#: app/main/routes.py:53 app/templates/base.html:28
+#: app/main/routes.py:53 app/templates/base.html:91
 msgid "Explore"
 msgstr "Все сообщения"
 
@@ -148,55 +153,84 @@ msgstr "Вы не можете отписаться на самого себя"
 msgid "You are not following %(username)s."
 msgstr "Вы отписались от %(username)s"
 
-#: app/templates/_post.html:15
+#: app/main/routes.py:160
+msgid "You message will be sent"
+msgstr "Сообщение отправлено"
+
+#: app/main/routes.py:162
+msgid "Send Message"
+msgstr "Отправить сообщение"
+
+#: app/templates/_post.html:17
 #, python-format
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s написал %(when)s"
 
-#: app/templates/base.html:18
+#: app/templates/base.html:81
 msgid "Toggle navigation"
 msgstr "Переключить навигацию"
 
-#: app/templates/base.html:23
+#: app/templates/base.html:86
 msgid "Microblog"
 msgstr "Микроблог"
 
-#: app/templates/base.html:41
+#: app/templates/base.html:104
 msgid "Login"
 msgstr "Войти"
 
-#: app/templates/base.html:43
+#: app/templates/base.html:108 app/templates/messages.html:4
+msgid "Messages"
+msgstr "Сообщения"
+
+#: app/templates/base.html:114
 msgid "Profile"
 msgstr "Профиль"
 
-#: app/templates/base.html:44
+#: app/templates/base.html:115
 msgid "Logout"
 msgstr "Выйти"
 
-#: app/templates/index.html:5 app/templates/user.html:5
+#: app/templates/index.html:5
 #, python-format
 msgid "Hello, %(username)s !"
 msgstr "Привет, %(username)s !"
 
-#: app/templates/index.html:22 app/templates/user.html:30
+#: app/templates/index.html:22 app/templates/user.html:37
 msgid "Newer posts"
 msgstr "Свежие сообщения"
 
-#: app/templates/index.html:27 app/templates/user.html:35
+#: app/templates/index.html:27 app/templates/user.html:42
 msgid "Older posts"
 msgstr "Старые сообщения"
+
+#: app/templates/messages.html:14
+msgid "Newer messages"
+msgstr "Следующие сообщения"
+
+#: app/templates/messages.html:19
+msgid "Older messages"
+msgstr "Предыдущие сообщения"
 
 #: app/templates/search.html:4
 msgid "Search Results"
 msgstr "Результаты поиска"
 
-#: app/templates/search.html:15
+#: app/templates/search.html:13
 msgid "Previous results"
 msgstr "Предыдущие результаты"
 
-#: app/templates/search.html:21
+#: app/templates/search.html:18
 msgid "Next results"
 msgstr "Следующие результаты"
+
+#: app/templates/send_message.html:5
+#, python-format
+msgid "Send Message to %(recipient)s"
+msgstr "Отправить сообщение для %(recipient)s"
+
+#: app/templates/user.html:25
+msgid "Send private message"
+msgstr "Отправить личное сообщение"
 
 #: app/templates/auth/login.html:12
 msgid "New User?"
@@ -243,13 +277,13 @@ msgid "Back"
 msgstr "Назад"
 
 #~ msgid "Toggle navigation"
-#~ msgstr "Переключить меню"
+#~ msgstr "Переключить навигацию"
 
 #~ msgid "Microblog"
 #~ msgstr "Микроблог"
 
 #~ msgid "Login"
-#~ msgstr "Вход"
+#~ msgstr "Войти"
 
 #~ msgid "Profile"
 #~ msgstr "Профиль"

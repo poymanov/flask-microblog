@@ -1,7 +1,9 @@
 {% set user_link %}
-    <a href="{{ url_for('main.user', username=post.author.username) }}">
-        {{ post.author.username }}
-    </a>
+    <span class="user_popup">
+        <a href="{{ url_for('main.user', username=post.author.username) }}">
+            {{ post.author.username }}
+        </a>
+    </span>
 {% endset %}
 
 <table class="table table-hover">
@@ -12,7 +14,7 @@
             </a>
         </td>
         <td>
-            {{ _('%(username)s said %(when)s', username=post.author.username, when=moment(post.timestamp).fromNow()) }}
+            {{ _('%(username)s said %(when)s', username=user_link, when=moment(post.timestamp).fromNow()) }}
             <br>
             {{ post.body }}
         </td>
